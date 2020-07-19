@@ -18,7 +18,7 @@ describe "user sees one article" do
       expect(page).to have_content(comment_2.author_name)
       expect(page).to have_content(comment_2.body)
     end
-    
+
     describe "they fill in a comment form" do
       it "displays the comment on the article show" do
         article = Article.create!(title: "New Title", body: "New Body")
@@ -33,6 +33,7 @@ describe "user sees one article" do
         expect(page).to have_content("Post a Comment")
         expect(page).to have_content("ME!")
         expect(page).to have_content("So many thoughts on this article.")
+        expect(page).to have_content("Comments (1)")
       end
     end
   end
