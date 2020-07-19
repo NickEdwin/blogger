@@ -1,0 +1,11 @@
+<h1>All Tags</h1>
+  <h5>Click a Tag to See The Associated Article</h5>
+<div>
+  <% @tags.each do |tag| %>
+    <% tag.articles.ids.each do |id| %>
+      <%= link_to tag.name, tag_path(tag) %>
+      <p>-<%= link_to "Delete This Tag", tag_path(tag), method: :delete, data: {confirm: "Really delete this tag?"} %></p>
+      <br>
+    <% end %>
+  <% end  %>
+</div>
